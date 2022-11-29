@@ -6,9 +6,13 @@ import javax.swing.JLabel;
 import Logica.Nivel;
 import Posicion.Posicion;
 
+/**
+ * Esta clase describe el comportamiento de las entidades dentro de la entidad grafica
+ * 
+ *
+ */
 public class EntidadGrafica {
 
- // protected String imagen;
   protected int alto;
   protected int ancho;
   protected JLabel label;
@@ -24,14 +28,12 @@ public class EntidadGrafica {
 
   public void setImagen(String imagen) {
     label.setIcon(new ImageIcon(this.getClass().getResource(imagen)));
-	//nivel.actualizarEntidadGrafica(this);
   }
   
   public void setPosicion(int x, int y) {
 	  posicion = new Posicion (x,y);
 	  label.setBounds(x,y, ancho, alto);
 	  label.setLocation(x, y);
-	  //nivel.actualizarEntidadGrafica(this);
   }
   
   public int getAncho() {

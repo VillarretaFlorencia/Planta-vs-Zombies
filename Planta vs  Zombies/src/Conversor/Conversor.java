@@ -1,5 +1,9 @@
 package Conversor;
-
+/**
+ * Esta clase ayuda a la conversion de medidas Pixel x Pixel a posiciones validas y visceversa
+ * Esta clase sigue el modelo singleton
+ *
+ */
 public class Conversor {
 
   //las dimensiones de cada cuadrado del jardin es 63 x 63
@@ -9,18 +13,30 @@ public class Conversor {
   public static Conversor getConversor() {
     return conversor;
   }
-
+  
+  /**
+   * Convierte un numero posicion a Pixel
+   * @param Numero posicion
+   * @return posicion en pantalla
+   */
   public int convertirPantalla(int numero) {
     return numero * ladoCuadrado;
   }
-
+  
+  /**
+   * Convierte una posicion de pixel a posicion
+   * @param Posicion en pantalla
+   * @return Numero posicion
+   */
   public int convertirFila(int num) {
     return (int) (Math.floor(num / ladoCuadrado));
   }
   
-  /*
+  /**
    * Convierte el numero recibido por parametro en una coordenada valida para mostrar en pantalla, 
-   * de acuerdo a la fila o columna a la que corresponde
+   * de acuerdo a la fila o columna a la que corresponde >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CHECKEAR
+   * @param Posicion en pantalla
+   * @return Numero posicion
    */
   public int convertirXY(int num) {
 	  int posicion = 0;
@@ -51,24 +67,4 @@ public class Conversor {
 	    
 	    return posicion;
   }
-  /*
-  public int convertirY(int y) {
-	    int posicion = 63;
-	    if (y > 63 && y < 126) {
-	      posicion = 63;
-	    }
-	    if (y > 126 && y < 189) {
-	      posicion = 126;
-	    }
-	    if (y > 189 && y < 252) {
-	      posicion = 189;
-	    }
-	    if (y > 252 && y < 315) {
-	      posicion = 252;
-	    }
-	    if (y > 315 && y < 378) {
-	      posicion = 315;
-	    }
-	    return posicion;
-  }*/
 }
